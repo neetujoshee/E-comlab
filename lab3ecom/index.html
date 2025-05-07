@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Checkout System</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let cart = [];
+
+        function addToCart(productName) {
+            cart.push(productName);
+            displayCart();
+        }
+
+        function displayCart() {
+            const cartList = document.getElementById("cart-items");
+            cartList.innerHTML = "";
+            cart.forEach(function(item) {
+                const li = document.createElement("li");
+                li.textContent = item;
+                cartList.appendChild(li);
+            });
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("Order Placed Successfully!\nItems: " + cart.join(", "));
+                cart = []; // Clear cart after order
+                displayCart();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Products</h1>
+    <div class="products">
+        <div class="product">
+            <h2>Mobile</h2>
+            <button onclick="addToCart('Mobile')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Laptop</h2>
+            <button onclick="addToCart('Laptop')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>T-Shirt</h2>
+            <button onclick="addToCart('T-Shirt')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Fiction Book</h2>
+            <button onclick="addToCart('Fiction Book')">Add to Cart</button>
+        </div>
+    </div>
+
+    <h1>Your Cart</h1>
+    <ul id="cart-items">
+        <!-- Cart items will appear here -->
+    </ul>
+
+    <button id="checkout-button" onclick="checkout()">Checkout</button>
+</body>
+</html>

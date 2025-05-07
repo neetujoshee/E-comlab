@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Wishlist System</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let wishlist = [];
+
+        function addToWishlist(productName) {
+            if (!wishlist.includes(productName)) {
+                wishlist.push(productName);
+                displayWishlist();
+            } else {
+                alert("Item already in wishlist!");
+            }
+        }
+
+        function displayWishlist() {
+            const wishlistList = document.getElementById("wishlist-items");
+            wishlistList.innerHTML = "";
+            wishlist.forEach(function(item) {
+                const li = document.createElement("li");
+                li.textContent = item;
+                wishlistList.appendChild(li);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Products</h1>
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Mobile">
+            <h2>Mobile</h2>
+            <button onclick="addToWishlist('Mobile')">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Laptop">
+            <h2>Laptop</h2>
+            <button onclick="addToWishlist('Laptop')">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="T-Shirt">
+            <h2>T-Shirt</h2>
+            <button onclick="addToWishlist('T-Shirt')">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Fiction Book">
+            <h2>Fiction Book</h2>
+            <button onclick="addToWishlist('Fiction Book')">Add to Wishlist</button>
+        </div>
+    </div>
+
+    <h1>Your Wishlist</h1>
+    <ul id="wishlist-items">
+        <!-- Wishlist items will appear here -->
+    </ul>
+</body>
+</html>

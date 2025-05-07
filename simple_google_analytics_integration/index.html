@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Analytics Setup Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Google Analytics Integration 📊</h1>
+        <p>Follow these steps to integrate Google Analytics into your website:</p>
+
+        <ol>
+            <li>Create a <strong>Google Analytics</strong> account at <a href="https://analytics.google.com/" target="_blank">analytics.google.com</a>.</li>
+            <li>Set up a new <strong>Property</strong> for your website.</li>
+            <li>Copy the <strong>Tracking ID</strong> (e.g., UA-XXXXXXXXX-X).</li>
+            <li>Add the following code inside the <code>&lt;head&gt;</code> tag of your website:</li>
+        </ol>
+
+<pre>
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXXXXXX-X');
+&lt;/script&gt;
+</pre>
+
+        <p><strong>Important Analytics Parameters to Monitor:</strong></p>
+        <ul>
+            <li>Page Views 📄</li>
+            <li>Users and New Users 👥</li>
+            <li>Session Duration ⏱️</li>
+            <li>Bounce Rate 🚪</li>
+            <li>Conversion Rate 💰</li>
+            <li>Cart Abandonment Rate 🛒</li>
+        </ul>
+
+        <p style="margin-top: 30px;">✅ Congratulations! Your website will now track visitor activities!</p>
+    </div>
+</body>
+</html>
